@@ -1,0 +1,2109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.4.3">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Test Plan" enabled="true">
+      <stringProp name="TestPlan.comments"></stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">true</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments">
+          <elementProp name="protocol" elementType="Argument">
+            <stringProp name="Argument.name">protocol</stringProp>
+            <stringProp name="Argument.value">${__P(protocol,http)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="port" elementType="Argument">
+            <stringProp name="Argument.name">port</stringProp>
+            <stringProp name="Argument.value">8000</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="server" elementType="Argument">
+            <stringProp name="Argument.name">server</stringProp>
+            <stringProp name="Argument.value">${__P(server,tmeic-dev.westus.cloudapp.azure.com)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="working_dir" elementType="Argument">
+            <stringProp name="Argument.name">working_dir</stringProp>
+            <stringProp name="Argument.value">${__P(working_dir,D:\4. Auto\TMEIC)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="supported_file" elementType="Argument">
+            <stringProp name="Argument.name">supported_file</stringProp>
+            <stringProp name="Argument.value">/csv/supported_file.csv</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="E10XXX_file" elementType="Argument">
+            <stringProp name="Argument.name">E10XXX_file</stringProp>
+            <stringProp name="Argument.value">/csv/E10XXX_file.csv</stringProp>
+            <stringProp name="Argument.desc">File to test E10XXX error</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="free_size_file" elementType="Argument">
+            <stringProp name="Argument.name">free_size_file</stringProp>
+            <stringProp name="Argument.value">/csv/free_size_file.csv</stringProp>
+            <stringProp name="Argument.desc">File to test free size file</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="E20002_file" elementType="Argument">
+            <stringProp name="Argument.name">E20002_file</stringProp>
+            <stringProp name="Argument.value">/csv/E20002_file.csv</stringProp>
+            <stringProp name="Argument.desc">File to test AI pipeline failure</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="wrongmethod_invalidpath" elementType="Argument">
+            <stringProp name="Argument.name">wrongmethod_invalidpath</stringProp>
+            <stringProp name="Argument.value">/csv/wrongmethod_invalidpath.csv</stringProp>
+            <stringProp name="Argument.desc">File to test wrongmethod &amp; invalidpath error</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="special_data" elementType="Argument">
+            <stringProp name="Argument.name">special_data</stringProp>
+            <stringProp name="Argument.value">/csv/specical_data.csv</stringProp>
+            <stringProp name="Argument.desc">AI special files</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="unsupported_file" elementType="Argument">
+            <stringProp name="Argument.name">unsupported_file</stringProp>
+            <stringProp name="Argument.value">/csv/unsupported_file.csv</stringProp>
+            <stringProp name="Argument.desc">unsupported extension</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="blank_file" elementType="Argument">
+            <stringProp name="Argument.name">blank_file</stringProp>
+            <stringProp name="Argument.value">/csv/blank_file.csv</stringProp>
+            <stringProp name="Argument.desc">blank file</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="skew_file" elementType="Argument">
+            <stringProp name="Argument.name">skew_file</stringProp>
+            <stringProp name="Argument.value">/csv/skew_file.csv</stringProp>
+            <stringProp name="Argument.desc">skew file</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="rotated_file" elementType="Argument">
+            <stringProp name="Argument.name">rotated_file</stringProp>
+            <stringProp name="Argument.value">/csv/rotated_file.csv</stringProp>
+            <stringProp name="Argument.desc">rotated file</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="corrupted_file" elementType="Argument">
+            <stringProp name="Argument.name">corrupted_file</stringProp>
+            <stringProp name="Argument.value">/csv/corrupted_file.csv</stringProp>
+            <stringProp name="Argument.desc">corrupted file</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="download_file" elementType="Argument">
+            <stringProp name="Argument.name">download_file</stringProp>
+            <stringProp name="Argument.value">/csv/download_file_list.csv</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="upload_api_path" elementType="Argument">
+            <stringProp name="Argument.name">upload_api_path</stringProp>
+            <stringProp name="Argument.value">/v2/ai/infer/</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="delete_api_path" elementType="Argument">
+            <stringProp name="Argument.name">delete_api_path</stringProp>
+            <stringProp name="Argument.value">/v2/delete</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="download_api_path" elementType="Argument">
+            <stringProp name="Argument.name">download_api_path</stringProp>
+            <stringProp name="Argument.value">/v2/download/</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+        </collectionProp>
+      </Arguments>
+      <hashTree/>
+      <ConfigTestElement guiclass="HttpDefaultsGui" testclass="ConfigTestElement" testname="HTTP Request Defaults" enabled="true">
+        <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+          <collectionProp name="Arguments.arguments"/>
+        </elementProp>
+        <stringProp name="HTTPSampler.domain">${server}</stringProp>
+        <stringProp name="HTTPSampler.port"></stringProp>
+        <stringProp name="HTTPSampler.protocol">${protocol}</stringProp>
+        <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+        <stringProp name="HTTPSampler.path"></stringProp>
+        <stringProp name="HTTPSampler.concurrentPool">6</stringProp>
+        <stringProp name="HTTPSampler.connect_timeout">50000</stringProp>
+        <stringProp name="HTTPSampler.response_timeout">50000</stringProp>
+      </ConfigTestElement>
+      <hashTree/>
+      <TestFragmentController guiclass="TestFragmentControllerGui" testclass="TestFragmentController" testname="Reuse Modules" enabled="true"/>
+      <hashTree>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="[SC] - Upload file" enabled="true"/>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Upload File - ${input}" enabled="true">
+            <elementProp name="HTTPsampler.Files" elementType="HTTPFileArgs">
+              <collectionProp name="HTTPFileArgs.files">
+                <elementProp name="${working_dir}/file/supported_file/PDF file/${input}" elementType="HTTPFileArg">
+                  <stringProp name="File.path">${working_dir}/file/supported_file/PDF file/${input}</stringProp>
+                  <stringProp name="File.paramname">input</stringProp>
+                  <stringProp name="File.mimetype">${type}</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="job_id" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">${jobid}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  <stringProp name="Argument.name">job_id</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain"></stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
+            <stringProp name="HTTPSampler.path">${upload_api_path}</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout">60000</stringProp>
+            <stringProp name="HTTPSampler.response_timeout">300000</stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <org.apache.jmeter.assertions.JSONSchemaAssertion guiclass="org.apache.jmeter.assertions.gui.JSONSchemaAssertionGui" testclass="org.apache.jmeter.assertions.JSONSchemaAssertion" testname="JSON Schema Assertion " enabled="true">
+              <stringProp name="jsonschema_assertion_filename">${working_dir}/Schema/Upload.txt</stringProp>
+            </org.apache.jmeter.assertions.JSONSchemaAssertion>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Verify response code" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="49586">200</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.custom_message"></stringProp>
+              <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+              <boolProp name="Assertion.assume_success">true</boolProp>
+              <intProp name="Assertion.test_type">8</intProp>
+            </ResponseAssertion>
+            <hashTree/>
+            <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Verify job id" enabled="true">
+              <stringProp name="JSON_PATH">$.job_id</stringProp>
+              <stringProp name="EXPECTED_VALUE">${jobid}</stringProp>
+              <boolProp name="JSONVALIDATION">true</boolProp>
+              <boolProp name="EXPECT_NULL">false</boolProp>
+              <boolProp name="INVERT">false</boolProp>
+              <boolProp name="ISREGEX">false</boolProp>
+            </JSONPathAssertion>
+            <hashTree/>
+            <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Verify error code" enabled="true">
+              <stringProp name="JSON_PATH">$.error_code</stringProp>
+              <stringProp name="EXPECTED_VALUE"></stringProp>
+              <boolProp name="JSONVALIDATION">true</boolProp>
+              <boolProp name="EXPECT_NULL">true</boolProp>
+              <boolProp name="INVERT">false</boolProp>
+              <boolProp name="ISREGEX">false</boolProp>
+            </JSONPathAssertion>
+            <hashTree/>
+            <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Verify error message" enabled="true">
+              <stringProp name="JSON_PATH">$.error_message</stringProp>
+              <stringProp name="EXPECTED_VALUE"></stringProp>
+              <boolProp name="JSONVALIDATION">true</boolProp>
+              <boolProp name="EXPECT_NULL">true</boolProp>
+              <boolProp name="INVERT">false</boolProp>
+              <boolProp name="ISREGEX">false</boolProp>
+            </JSONPathAssertion>
+            <hashTree/>
+            <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Verify error message jp" enabled="true">
+              <stringProp name="JSON_PATH">$.error_message_jp</stringProp>
+              <stringProp name="EXPECTED_VALUE"></stringProp>
+              <boolProp name="JSONVALIDATION">true</boolProp>
+              <boolProp name="EXPECT_NULL">true</boolProp>
+              <boolProp name="INVERT">false</boolProp>
+              <boolProp name="ISREGEX">false</boolProp>
+            </JSONPathAssertion>
+            <hashTree/>
+            <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="BeanShell PreProcessor" enabled="true">
+              <boolProp name="resetInterpreter">false</boolProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="script">jobid = &quot;${__Random(5,1000)}&quot;;
+
+vars.put(&quot;jobid&quot;, jobid);</stringProp>
+            </BeanShellPreProcessor>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="-- health check system--" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">stoptestnow</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+      </ThreadGroup>
+      <hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Health check system" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
+          <stringProp name="HTTPSampler.path">/v2/health/live</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="49586">200</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+            <boolProp name="Assertion.assume_success">true</boolProp>
+            <intProp name="Assertion.test_type">8</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Upload API" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+      </ThreadGroup>
+      <hashTree>
+        <ConfigTestElement guiclass="HttpDefaultsGui" testclass="ConfigTestElement" testname="HTTP Request Defaults" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">${upload_api_path}</stringProp>
+          <stringProp name="HTTPSampler.concurrentPool">6</stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </ConfigTestElement>
+        <hashTree/>
+        <WhileController guiclass="WhileControllerGui" testclass="WhileController" testname="Upload Supported File" enabled="true">
+          <stringProp name="WhileController.condition">${__jexl3(&quot;${input1}&quot;!=&quot;&lt;EOF&gt;&quot;)}</stringProp>
+        </WhileController>
+        <hashTree>
+          <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config" enabled="true">
+            <stringProp name="filename">${working_dir}${supported_file}</stringProp>
+            <stringProp name="fileEncoding">UTF-8</stringProp>
+            <stringProp name="variableNames">jobid,input1,type,metadata_flag</stringProp>
+            <boolProp name="ignoreFirstLine">true</boolProp>
+            <stringProp name="delimiter">,</stringProp>
+            <boolProp name="quotedData">true</boolProp>
+            <boolProp name="recycle">false</boolProp>
+            <boolProp name="stopThread">false</boolProp>
+            <stringProp name="shareMode">shareMode.thread</stringProp>
+          </CSVDataSet>
+          <hashTree/>
+          <IfController guiclass="IfControllerPanel" testclass="IfController" testname="If Controller" enabled="true">
+            <stringProp name="IfController.condition">${__jexl3(&quot;${input1}&quot;!=&quot;&lt;EOF&gt;&quot;)}</stringProp>
+            <boolProp name="IfController.evaluateAll">false</boolProp>
+            <boolProp name="IfController.useExpression">true</boolProp>
+          </IfController>
+          <hashTree>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Upload Supported File - ${input1}" enabled="true">
+              <elementProp name="HTTPsampler.Files" elementType="HTTPFileArgs">
+                <collectionProp name="HTTPFileArgs.files">
+                  <elementProp name="${working_dir}/file/supported_file/PDF file/${input1}" elementType="HTTPFileArg">
+                    <stringProp name="File.path">${working_dir}/file/supported_file/PDF file/${input1}</stringProp>
+                    <stringProp name="File.paramname">input</stringProp>
+                    <stringProp name="File.mimetype">${type}</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </elementProp>
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+                <collectionProp name="Arguments.arguments">
+                  <elementProp name="job_id" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">${jobid}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                    <stringProp name="Argument.name">job_id</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </elementProp>
+              <stringProp name="HTTPSampler.domain"></stringProp>
+              <stringProp name="HTTPSampler.port"></stringProp>
+              <stringProp name="HTTPSampler.protocol"></stringProp>
+              <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
+              <stringProp name="HTTPSampler.path"></stringProp>
+              <stringProp name="HTTPSampler.method">POST</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+              <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+              <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+              <stringProp name="HTTPSampler.connect_timeout">60000</stringProp>
+              <stringProp name="HTTPSampler.response_timeout">300000</stringProp>
+            </HTTPSamplerProxy>
+            <hashTree>
+              <org.apache.jmeter.assertions.JSONSchemaAssertion guiclass="org.apache.jmeter.assertions.gui.JSONSchemaAssertionGui" testclass="org.apache.jmeter.assertions.JSONSchemaAssertion" testname="JSON GET Schema Assertion " enabled="true">
+                <stringProp name="jsonschema_assertion_filename">${working_dir}/Schema/Upload.txt</stringProp>
+              </org.apache.jmeter.assertions.JSONSchemaAssertion>
+              <hashTree/>
+              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Verify response code" enabled="true">
+                <collectionProp name="Asserion.test_strings">
+                  <stringProp name="49586">200</stringProp>
+                </collectionProp>
+                <stringProp name="Assertion.custom_message"></stringProp>
+                <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+                <boolProp name="Assertion.assume_success">true</boolProp>
+                <intProp name="Assertion.test_type">8</intProp>
+              </ResponseAssertion>
+              <hashTree/>
+              <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Verify job id" enabled="true">
+                <stringProp name="JSON_PATH">$.job_id</stringProp>
+                <stringProp name="EXPECTED_VALUE">${jobid}</stringProp>
+                <boolProp name="JSONVALIDATION">true</boolProp>
+                <boolProp name="EXPECT_NULL">false</boolProp>
+                <boolProp name="INVERT">false</boolProp>
+                <boolProp name="ISREGEX">false</boolProp>
+              </JSONPathAssertion>
+              <hashTree/>
+              <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Verify error code" enabled="true">
+                <stringProp name="JSON_PATH">$.error_code</stringProp>
+                <stringProp name="EXPECTED_VALUE"></stringProp>
+                <boolProp name="JSONVALIDATION">true</boolProp>
+                <boolProp name="EXPECT_NULL">true</boolProp>
+                <boolProp name="INVERT">false</boolProp>
+                <boolProp name="ISREGEX">false</boolProp>
+              </JSONPathAssertion>
+              <hashTree/>
+              <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Verify error message" enabled="true">
+                <stringProp name="JSON_PATH">$.error_message</stringProp>
+                <stringProp name="EXPECTED_VALUE"></stringProp>
+                <boolProp name="JSONVALIDATION">true</boolProp>
+                <boolProp name="EXPECT_NULL">true</boolProp>
+                <boolProp name="INVERT">false</boolProp>
+                <boolProp name="ISREGEX">false</boolProp>
+              </JSONPathAssertion>
+              <hashTree/>
+              <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Verify error message jp" enabled="true">
+                <stringProp name="JSON_PATH">$.error_message_jp</stringProp>
+                <stringProp name="EXPECTED_VALUE"></stringProp>
+                <boolProp name="JSONVALIDATION">true</boolProp>
+                <boolProp name="EXPECT_NULL">true</boolProp>
+                <boolProp name="INVERT">false</boolProp>
+                <boolProp name="ISREGEX">false</boolProp>
+              </JSONPathAssertion>
+              <hashTree/>
+              <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Verify metadata flag" enabled="true">
+                <stringProp name="JSON_PATH">$.all_have_metadata</stringProp>
+                <stringProp name="EXPECTED_VALUE">${metadata_flag}</stringProp>
+                <boolProp name="JSONVALIDATION">true</boolProp>
+                <boolProp name="EXPECT_NULL">false</boolProp>
+                <boolProp name="INVERT">false</boolProp>
+                <boolProp name="ISREGEX">false</boolProp>
+              </JSONPathAssertion>
+              <hashTree/>
+            </hashTree>
+          </hashTree>
+        </hashTree>
+        <WhileController guiclass="WhileControllerGui" testclass="WhileController" testname="Upload Free Size" enabled="true">
+          <stringProp name="WhileController.condition">${__jexl3(&quot;${input2}&quot;!=&quot;&lt;EOF&gt;&quot;)}</stringProp>
+        </WhileController>
+        <hashTree>
+          <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config" enabled="true">
+            <stringProp name="filename">${working_dir}${free_size_file}</stringProp>
+            <stringProp name="fileEncoding">UTF-8</stringProp>
+            <stringProp name="variableNames">jobid,input2,type,metadata_flag</stringProp>
+            <boolProp name="ignoreFirstLine">true</boolProp>
+            <stringProp name="delimiter">,</stringProp>
+            <boolProp name="quotedData">false</boolProp>
+            <boolProp name="recycle">false</boolProp>
+            <boolProp name="stopThread">false</boolProp>
+            <stringProp name="shareMode">shareMode.thread</stringProp>
+          </CSVDataSet>
+          <hashTree/>
+          <IfController guiclass="IfControllerPanel" testclass="IfController" testname="If Controller" enabled="true">
+            <stringProp name="IfController.condition">${__jexl3(&quot;${input2}&quot;!=&quot;&lt;EOF&gt;&quot;)}</stringProp>
+            <boolProp name="IfController.evaluateAll">false</boolProp>
+            <boolProp name="IfController.useExpression">true</boolProp>
+          </IfController>
+          <hashTree>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Upload Free Size - ${input2}" enabled="true">
+              <elementProp name="HTTPsampler.Files" elementType="HTTPFileArgs">
+                <collectionProp name="HTTPFileArgs.files">
+                  <elementProp name="${working_dir}/file/free_size_file/${input2}" elementType="HTTPFileArg">
+                    <stringProp name="File.path">${working_dir}/file/free_size_file/${input2}</stringProp>
+                    <stringProp name="File.paramname">input</stringProp>
+                    <stringProp name="File.mimetype">${type}</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </elementProp>
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+                <collectionProp name="Arguments.arguments">
+                  <elementProp name="job_id" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">${jobid}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                    <stringProp name="Argument.name">job_id</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </elementProp>
+              <stringProp name="HTTPSampler.domain"></stringProp>
+              <stringProp name="HTTPSampler.port"></stringProp>
+              <stringProp name="HTTPSampler.protocol"></stringProp>
+              <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
+              <stringProp name="HTTPSampler.path"></stringProp>
+              <stringProp name="HTTPSampler.method">POST</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+              <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+              <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+              <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+              <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            </HTTPSamplerProxy>
+            <hashTree>
+              <org.apache.jmeter.assertions.JSONSchemaAssertion guiclass="org.apache.jmeter.assertions.gui.JSONSchemaAssertionGui" testclass="org.apache.jmeter.assertions.JSONSchemaAssertion" testname="JSON GET Schema Assertion " enabled="true">
+                <stringProp name="jsonschema_assertion_filename">${working_dir}/Schema/Upload.txt</stringProp>
+              </org.apache.jmeter.assertions.JSONSchemaAssertion>
+              <hashTree/>
+              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Verify response code" enabled="true">
+                <collectionProp name="Asserion.test_strings">
+                  <stringProp name="49586">200</stringProp>
+                </collectionProp>
+                <stringProp name="Assertion.custom_message"></stringProp>
+                <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+                <boolProp name="Assertion.assume_success">true</boolProp>
+                <intProp name="Assertion.test_type">8</intProp>
+              </ResponseAssertion>
+              <hashTree/>
+              <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Verify job id" enabled="true">
+                <stringProp name="JSON_PATH">$.job_id</stringProp>
+                <stringProp name="EXPECTED_VALUE">${jobid}</stringProp>
+                <boolProp name="JSONVALIDATION">true</boolProp>
+                <boolProp name="EXPECT_NULL">false</boolProp>
+                <boolProp name="INVERT">false</boolProp>
+                <boolProp name="ISREGEX">false</boolProp>
+              </JSONPathAssertion>
+              <hashTree/>
+              <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Verify error code" enabled="true">
+                <stringProp name="JSON_PATH">$.error_code</stringProp>
+                <stringProp name="EXPECTED_VALUE"></stringProp>
+                <boolProp name="JSONVALIDATION">true</boolProp>
+                <boolProp name="EXPECT_NULL">true</boolProp>
+                <boolProp name="INVERT">false</boolProp>
+                <boolProp name="ISREGEX">false</boolProp>
+              </JSONPathAssertion>
+              <hashTree/>
+              <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Verify error message" enabled="true">
+                <stringProp name="JSON_PATH">$.error_message</stringProp>
+                <stringProp name="EXPECTED_VALUE"></stringProp>
+                <boolProp name="JSONVALIDATION">true</boolProp>
+                <boolProp name="EXPECT_NULL">true</boolProp>
+                <boolProp name="INVERT">false</boolProp>
+                <boolProp name="ISREGEX">false</boolProp>
+              </JSONPathAssertion>
+              <hashTree/>
+              <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Verify error message jp" enabled="true">
+                <stringProp name="JSON_PATH">$.error_message_jp</stringProp>
+                <stringProp name="EXPECTED_VALUE"></stringProp>
+                <boolProp name="JSONVALIDATION">true</boolProp>
+                <boolProp name="EXPECT_NULL">true</boolProp>
+                <boolProp name="INVERT">false</boolProp>
+                <boolProp name="ISREGEX">false</boolProp>
+              </JSONPathAssertion>
+              <hashTree/>
+              <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Verify metadata flag" enabled="true">
+                <stringProp name="JSON_PATH">$.all_have_metadata</stringProp>
+                <stringProp name="EXPECTED_VALUE">${metadata_flag}</stringProp>
+                <boolProp name="JSONVALIDATION">true</boolProp>
+                <boolProp name="EXPECT_NULL">false</boolProp>
+                <boolProp name="INVERT">false</boolProp>
+                <boolProp name="ISREGEX">false</boolProp>
+              </JSONPathAssertion>
+              <hashTree/>
+            </hashTree>
+          </hashTree>
+        </hashTree>
+        <WhileController guiclass="WhileControllerGui" testclass="WhileController" testname="Upload Unsupported File - E10007" enabled="true">
+          <stringProp name="WhileController.condition">${__jexl3(&quot;${input3}&quot;!=&quot;&lt;EOF&gt;&quot;)}</stringProp>
+        </WhileController>
+        <hashTree>
+          <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config" enabled="true">
+            <stringProp name="filename">${working_dir}${unsupported_file}</stringProp>
+            <stringProp name="fileEncoding">UTF-8</stringProp>
+            <stringProp name="variableNames">jobid,input3,type</stringProp>
+            <boolProp name="ignoreFirstLine">true</boolProp>
+            <stringProp name="delimiter">,</stringProp>
+            <boolProp name="quotedData">true</boolProp>
+            <boolProp name="recycle">false</boolProp>
+            <boolProp name="stopThread">false</boolProp>
+            <stringProp name="shareMode">shareMode.thread</stringProp>
+          </CSVDataSet>
+          <hashTree/>
+          <IfController guiclass="IfControllerPanel" testclass="IfController" testname="If Controller" enabled="true">
+            <stringProp name="IfController.condition">${__jexl3(&quot;${input3}&quot;!=&quot;&lt;EOF&gt;&quot;)}</stringProp>
+            <boolProp name="IfController.evaluateAll">false</boolProp>
+            <boolProp name="IfController.useExpression">true</boolProp>
+          </IfController>
+          <hashTree>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Upload Unsupported File - E10007 - ${input3}" enabled="true">
+              <elementProp name="HTTPsampler.Files" elementType="HTTPFileArgs">
+                <collectionProp name="HTTPFileArgs.files">
+                  <elementProp name="${working_dir}/file/unsupported_file/${input3}" elementType="HTTPFileArg">
+                    <stringProp name="File.path">${working_dir}/file/unsupported_file/${input3}</stringProp>
+                    <stringProp name="File.paramname">input</stringProp>
+                    <stringProp name="File.mimetype">${type}</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </elementProp>
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+                <collectionProp name="Arguments.arguments">
+                  <elementProp name="job_id" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">${jobid}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                    <stringProp name="Argument.name">job_id</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </elementProp>
+              <stringProp name="HTTPSampler.domain"></stringProp>
+              <stringProp name="HTTPSampler.port"></stringProp>
+              <stringProp name="HTTPSampler.protocol"></stringProp>
+              <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
+              <stringProp name="HTTPSampler.path"></stringProp>
+              <stringProp name="HTTPSampler.method">POST</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+              <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+              <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+              <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+              <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            </HTTPSamplerProxy>
+            <hashTree>
+              <org.apache.jmeter.assertions.JSONSchemaAssertion guiclass="org.apache.jmeter.assertions.gui.JSONSchemaAssertionGui" testclass="org.apache.jmeter.assertions.JSONSchemaAssertion" testname="JSON GET Schema Assertion " enabled="true">
+                <stringProp name="jsonschema_assertion_filename">${working_dir}/Schema/Upload.txt</stringProp>
+              </org.apache.jmeter.assertions.JSONSchemaAssertion>
+              <hashTree/>
+              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Verify response code" enabled="true">
+                <collectionProp name="Asserion.test_strings">
+                  <stringProp name="49586">200</stringProp>
+                </collectionProp>
+                <stringProp name="Assertion.custom_message"></stringProp>
+                <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+                <boolProp name="Assertion.assume_success">true</boolProp>
+                <intProp name="Assertion.test_type">8</intProp>
+              </ResponseAssertion>
+              <hashTree/>
+              <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Verify job id" enabled="true">
+                <stringProp name="JSON_PATH">$.job_id</stringProp>
+                <stringProp name="EXPECTED_VALUE">${jobid}</stringProp>
+                <boolProp name="JSONVALIDATION">true</boolProp>
+                <boolProp name="EXPECT_NULL">false</boolProp>
+                <boolProp name="INVERT">false</boolProp>
+                <boolProp name="ISREGEX">false</boolProp>
+              </JSONPathAssertion>
+              <hashTree/>
+              <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Verify error code" enabled="true">
+                <stringProp name="JSON_PATH">$.error_code</stringProp>
+                <stringProp name="EXPECTED_VALUE">E10007</stringProp>
+                <boolProp name="JSONVALIDATION">true</boolProp>
+                <boolProp name="EXPECT_NULL">false</boolProp>
+                <boolProp name="INVERT">false</boolProp>
+                <boolProp name="ISREGEX">false</boolProp>
+              </JSONPathAssertion>
+              <hashTree/>
+              <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Verify error message" enabled="true">
+                <stringProp name="JSON_PATH">$.error_message</stringProp>
+                <stringProp name="EXPECTED_VALUE"></stringProp>
+                <boolProp name="JSONVALIDATION">false</boolProp>
+                <boolProp name="EXPECT_NULL">true</boolProp>
+                <boolProp name="INVERT">false</boolProp>
+                <boolProp name="ISREGEX">false</boolProp>
+              </JSONPathAssertion>
+              <hashTree/>
+              <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Verify error message jp" enabled="true">
+                <stringProp name="JSON_PATH">$.error_message_jp</stringProp>
+                <stringProp name="EXPECTED_VALUE"></stringProp>
+                <boolProp name="JSONVALIDATION">true</boolProp>
+                <boolProp name="EXPECT_NULL">true</boolProp>
+                <boolProp name="INVERT">false</boolProp>
+                <boolProp name="ISREGEX">false</boolProp>
+              </JSONPathAssertion>
+              <hashTree/>
+            </hashTree>
+          </hashTree>
+        </hashTree>
+        <WhileController guiclass="WhileControllerGui" testclass="WhileController" testname="Upload Corrupted File -  E10008" enabled="true">
+          <stringProp name="WhileController.condition">${__jexl3(&quot;${input4}&quot;!=&quot;&lt;EOF&gt;&quot;)}</stringProp>
+        </WhileController>
+        <hashTree>
+          <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config" enabled="true">
+            <stringProp name="filename">${working_dir}${corrupted_file}</stringProp>
+            <stringProp name="fileEncoding">UTF-8</stringProp>
+            <stringProp name="variableNames">jobid,input4,type</stringProp>
+            <boolProp name="ignoreFirstLine">true</boolProp>
+            <stringProp name="delimiter">,</stringProp>
+            <boolProp name="quotedData">false</boolProp>
+            <boolProp name="recycle">false</boolProp>
+            <boolProp name="stopThread">false</boolProp>
+            <stringProp name="shareMode">shareMode.thread</stringProp>
+          </CSVDataSet>
+          <hashTree/>
+          <IfController guiclass="IfControllerPanel" testclass="IfController" testname="If Controller" enabled="true">
+            <stringProp name="IfController.condition">${__jexl3(&quot;${input4}&quot;!=&quot;&lt;EOF&gt;&quot;)}</stringProp>
+            <boolProp name="IfController.evaluateAll">false</boolProp>
+            <boolProp name="IfController.useExpression">true</boolProp>
+          </IfController>
+          <hashTree>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Upload Corrupted File -  E10008 - ${input4}" enabled="true">
+              <elementProp name="HTTPsampler.Files" elementType="HTTPFileArgs">
+                <collectionProp name="HTTPFileArgs.files">
+                  <elementProp name="${working_dir}/file/corrupted_file/${input4}" elementType="HTTPFileArg">
+                    <stringProp name="File.path">${working_dir}/file/corrupted_file/${input4}</stringProp>
+                    <stringProp name="File.paramname">input</stringProp>
+                    <stringProp name="File.mimetype">${type}</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </elementProp>
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+                <collectionProp name="Arguments.arguments">
+                  <elementProp name="job_id" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">${jobid}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                    <stringProp name="Argument.name">job_id</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </elementProp>
+              <stringProp name="HTTPSampler.domain"></stringProp>
+              <stringProp name="HTTPSampler.port"></stringProp>
+              <stringProp name="HTTPSampler.protocol"></stringProp>
+              <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
+              <stringProp name="HTTPSampler.path"></stringProp>
+              <stringProp name="HTTPSampler.method">POST</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+              <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+              <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+              <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+              <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            </HTTPSamplerProxy>
+            <hashTree>
+              <org.apache.jmeter.assertions.JSONSchemaAssertion guiclass="org.apache.jmeter.assertions.gui.JSONSchemaAssertionGui" testclass="org.apache.jmeter.assertions.JSONSchemaAssertion" testname="JSON GET Schema Assertion " enabled="true">
+                <stringProp name="jsonschema_assertion_filename">${working_dir}/Schema/Upload.txt</stringProp>
+              </org.apache.jmeter.assertions.JSONSchemaAssertion>
+              <hashTree/>
+              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Verify response code" enabled="true">
+                <collectionProp name="Asserion.test_strings">
+                  <stringProp name="49586">200</stringProp>
+                </collectionProp>
+                <stringProp name="Assertion.custom_message"></stringProp>
+                <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+                <boolProp name="Assertion.assume_success">true</boolProp>
+                <intProp name="Assertion.test_type">8</intProp>
+              </ResponseAssertion>
+              <hashTree/>
+              <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Verify job id" enabled="true">
+                <stringProp name="JSON_PATH">$.job_id</stringProp>
+                <stringProp name="EXPECTED_VALUE">${jobid}</stringProp>
+                <boolProp name="JSONVALIDATION">true</boolProp>
+                <boolProp name="EXPECT_NULL">false</boolProp>
+                <boolProp name="INVERT">false</boolProp>
+                <boolProp name="ISREGEX">false</boolProp>
+              </JSONPathAssertion>
+              <hashTree/>
+              <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Verify error code" enabled="true">
+                <stringProp name="JSON_PATH">$.error_code</stringProp>
+                <stringProp name="EXPECTED_VALUE">E10008</stringProp>
+                <boolProp name="JSONVALIDATION">true</boolProp>
+                <boolProp name="EXPECT_NULL">false</boolProp>
+                <boolProp name="INVERT">false</boolProp>
+                <boolProp name="ISREGEX">false</boolProp>
+              </JSONPathAssertion>
+              <hashTree/>
+              <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Verify error message" enabled="true">
+                <stringProp name="JSON_PATH">$.error_message</stringProp>
+                <stringProp name="EXPECTED_VALUE">The uploaded file is broken.</stringProp>
+                <boolProp name="JSONVALIDATION">true</boolProp>
+                <boolProp name="EXPECT_NULL">false</boolProp>
+                <boolProp name="INVERT">false</boolProp>
+                <boolProp name="ISREGEX">false</boolProp>
+              </JSONPathAssertion>
+              <hashTree/>
+              <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Verify error message jp" enabled="true">
+                <stringProp name="JSON_PATH">$.error_message_jp</stringProp>
+                <stringProp name="EXPECTED_VALUE">アップロードされたファイルが有効でありません</stringProp>
+                <boolProp name="JSONVALIDATION">true</boolProp>
+                <boolProp name="EXPECT_NULL">false</boolProp>
+                <boolProp name="INVERT">false</boolProp>
+                <boolProp name="ISREGEX">false</boolProp>
+              </JSONPathAssertion>
+              <hashTree/>
+            </hashTree>
+          </hashTree>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="[job_id] key is not found - E10001" enabled="true">
+          <elementProp name="HTTPsampler.Files" elementType="HTTPFileArgs">
+            <collectionProp name="HTTPFileArgs.files">
+              <elementProp name="${working_dir}/file/supported_file/PDF file/000.pdf" elementType="HTTPFileArg">
+                <stringProp name="File.path">${working_dir}/file/supported_file/PDF file/000.pdf</stringProp>
+                <stringProp name="File.paramname">input</stringProp>
+                <stringProp name="File.mimetype">application/pdf</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
+          <stringProp name="HTTPSampler.path"></stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <org.apache.jmeter.assertions.JSONSchemaAssertion guiclass="org.apache.jmeter.assertions.gui.JSONSchemaAssertionGui" testclass="org.apache.jmeter.assertions.JSONSchemaAssertion" testname="JSON GET Schema Assertion " enabled="true">
+            <stringProp name="jsonschema_assertion_filename">${working_dir}/Schema/Upload.txt</stringProp>
+          </org.apache.jmeter.assertions.JSONSchemaAssertion>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Verify response code" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="49586">200</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+            <boolProp name="Assertion.assume_success">true</boolProp>
+            <intProp name="Assertion.test_type">8</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Verify job id" enabled="true">
+            <stringProp name="JSON_PATH">$.job_id</stringProp>
+            <stringProp name="EXPECTED_VALUE"></stringProp>
+            <boolProp name="JSONVALIDATION">true</boolProp>
+            <boolProp name="EXPECT_NULL">true</boolProp>
+            <boolProp name="INVERT">false</boolProp>
+            <boolProp name="ISREGEX">false</boolProp>
+          </JSONPathAssertion>
+          <hashTree/>
+          <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Verify error code" enabled="true">
+            <stringProp name="JSON_PATH">$.error_code</stringProp>
+            <stringProp name="EXPECTED_VALUE">E10001</stringProp>
+            <boolProp name="JSONVALIDATION">true</boolProp>
+            <boolProp name="EXPECT_NULL">false</boolProp>
+            <boolProp name="INVERT">false</boolProp>
+            <boolProp name="ISREGEX">false</boolProp>
+          </JSONPathAssertion>
+          <hashTree/>
+          <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Verify error message" enabled="true">
+            <stringProp name="JSON_PATH">$.error_message</stringProp>
+            <stringProp name="EXPECTED_VALUE">job_id is required.</stringProp>
+            <boolProp name="JSONVALIDATION">true</boolProp>
+            <boolProp name="EXPECT_NULL">false</boolProp>
+            <boolProp name="INVERT">false</boolProp>
+            <boolProp name="ISREGEX">false</boolProp>
+          </JSONPathAssertion>
+          <hashTree/>
+          <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Verify error message jp" enabled="true">
+            <stringProp name="JSON_PATH">$.error_message_jp</stringProp>
+            <stringProp name="EXPECTED_VALUE">リクエストされたjob_idがありません</stringProp>
+            <boolProp name="JSONVALIDATION">true</boolProp>
+            <boolProp name="EXPECT_NULL">false</boolProp>
+            <boolProp name="INVERT">false</boolProp>
+            <boolProp name="ISREGEX">false</boolProp>
+          </JSONPathAssertion>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="[job_id] key is in upper case - E10001" enabled="true">
+          <elementProp name="HTTPsampler.Files" elementType="HTTPFileArgs">
+            <collectionProp name="HTTPFileArgs.files">
+              <elementProp name="${working_dir}/file/supported_file/PDF file/000.pdf" elementType="HTTPFileArg">
+                <stringProp name="File.path">${working_dir}/file/supported_file/PDF file/000.pdf</stringProp>
+                <stringProp name="File.paramname">input</stringProp>
+                <stringProp name="File.mimetype">application/pdf</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="JOB_ID" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">1234567</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">JOB_ID</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
+          <stringProp name="HTTPSampler.path"></stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <org.apache.jmeter.assertions.JSONSchemaAssertion guiclass="org.apache.jmeter.assertions.gui.JSONSchemaAssertionGui" testclass="org.apache.jmeter.assertions.JSONSchemaAssertion" testname="JSON GET Schema Assertion " enabled="true">
+            <stringProp name="jsonschema_assertion_filename">${working_dir}/Schema/Upload.txt</stringProp>
+          </org.apache.jmeter.assertions.JSONSchemaAssertion>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Verify response code" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="49586">200</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+            <boolProp name="Assertion.assume_success">true</boolProp>
+            <intProp name="Assertion.test_type">8</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Verify job id" enabled="true">
+            <stringProp name="JSON_PATH">$.job_id</stringProp>
+            <stringProp name="EXPECTED_VALUE"></stringProp>
+            <boolProp name="JSONVALIDATION">true</boolProp>
+            <boolProp name="EXPECT_NULL">true</boolProp>
+            <boolProp name="INVERT">false</boolProp>
+            <boolProp name="ISREGEX">false</boolProp>
+          </JSONPathAssertion>
+          <hashTree/>
+          <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Verify error code" enabled="true">
+            <stringProp name="JSON_PATH">$.error_code</stringProp>
+            <stringProp name="EXPECTED_VALUE">E10001</stringProp>
+            <boolProp name="JSONVALIDATION">true</boolProp>
+            <boolProp name="EXPECT_NULL">false</boolProp>
+            <boolProp name="INVERT">false</boolProp>
+            <boolProp name="ISREGEX">false</boolProp>
+          </JSONPathAssertion>
+          <hashTree/>
+          <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Verify error message" enabled="true">
+            <stringProp name="JSON_PATH">$.error_message</stringProp>
+            <stringProp name="EXPECTED_VALUE">job_id is required.</stringProp>
+            <boolProp name="JSONVALIDATION">true</boolProp>
+            <boolProp name="EXPECT_NULL">false</boolProp>
+            <boolProp name="INVERT">false</boolProp>
+            <boolProp name="ISREGEX">false</boolProp>
+          </JSONPathAssertion>
+          <hashTree/>
+          <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Verify error message jp" enabled="true">
+            <stringProp name="JSON_PATH">$.error_message_jp</stringProp>
+            <stringProp name="EXPECTED_VALUE">リクエストされたjob_idがありません</stringProp>
+            <boolProp name="JSONVALIDATION">true</boolProp>
+            <boolProp name="EXPECT_NULL">false</boolProp>
+            <boolProp name="INVERT">false</boolProp>
+            <boolProp name="ISREGEX">false</boolProp>
+          </JSONPathAssertion>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="[job_id] not have value - E10002" enabled="true">
+          <elementProp name="HTTPsampler.Files" elementType="HTTPFileArgs">
+            <collectionProp name="HTTPFileArgs.files">
+              <elementProp name="${working_dir}/file/supported_file/PDF file/000.pdf" elementType="HTTPFileArg">
+                <stringProp name="File.path">${working_dir}/file/supported_file/PDF file/000.pdf</stringProp>
+                <stringProp name="File.paramname">input</stringProp>
+                <stringProp name="File.mimetype">application/pdf}</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="job_id" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value"></stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">job_id</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
+          <stringProp name="HTTPSampler.path"></stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <org.apache.jmeter.assertions.JSONSchemaAssertion guiclass="org.apache.jmeter.assertions.gui.JSONSchemaAssertionGui" testclass="org.apache.jmeter.assertions.JSONSchemaAssertion" testname="JSON GET Schema Assertion " enabled="true">
+            <stringProp name="jsonschema_assertion_filename">${working_dir}/Schema/Upload.txt</stringProp>
+          </org.apache.jmeter.assertions.JSONSchemaAssertion>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Verify response code" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="49586">200</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+            <boolProp name="Assertion.assume_success">true</boolProp>
+            <intProp name="Assertion.test_type">8</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Verify job id" enabled="true">
+            <stringProp name="JSON_PATH">$.job_id</stringProp>
+            <stringProp name="EXPECTED_VALUE"></stringProp>
+            <boolProp name="JSONVALIDATION">true</boolProp>
+            <boolProp name="EXPECT_NULL">true</boolProp>
+            <boolProp name="INVERT">false</boolProp>
+            <boolProp name="ISREGEX">false</boolProp>
+          </JSONPathAssertion>
+          <hashTree/>
+          <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Verify error code" enabled="true">
+            <stringProp name="JSON_PATH">$.error_code</stringProp>
+            <stringProp name="EXPECTED_VALUE">E10002</stringProp>
+            <boolProp name="JSONVALIDATION">true</boolProp>
+            <boolProp name="EXPECT_NULL">false</boolProp>
+            <boolProp name="INVERT">false</boolProp>
+            <boolProp name="ISREGEX">false</boolProp>
+          </JSONPathAssertion>
+          <hashTree/>
+          <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Verify error message" enabled="true">
+            <stringProp name="JSON_PATH">$.error_message</stringProp>
+            <stringProp name="EXPECTED_VALUE">job_id is required.</stringProp>
+            <boolProp name="JSONVALIDATION">true</boolProp>
+            <boolProp name="EXPECT_NULL">false</boolProp>
+            <boolProp name="INVERT">false</boolProp>
+            <boolProp name="ISREGEX">false</boolProp>
+          </JSONPathAssertion>
+          <hashTree/>
+          <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Verify error message jp" enabled="true">
+            <stringProp name="JSON_PATH">$.error_message_jp</stringProp>
+            <stringProp name="EXPECTED_VALUE">リクエストされたjob_idがありません</stringProp>
+            <boolProp name="JSONVALIDATION">true</boolProp>
+            <boolProp name="EXPECT_NULL">false</boolProp>
+            <boolProp name="INVERT">false</boolProp>
+            <boolProp name="ISREGEX">false</boolProp>
+          </JSONPathAssertion>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="[job_id] value is in wrong type - E10003" enabled="true">
+          <elementProp name="HTTPsampler.Files" elementType="HTTPFileArgs">
+            <collectionProp name="HTTPFileArgs.files">
+              <elementProp name="${working_dir}/file/supported_file/PDF file/000.pdf" elementType="HTTPFileArg">
+                <stringProp name="File.path">${working_dir}/file/supported_file/PDF file/000.pdf</stringProp>
+                <stringProp name="File.paramname">input</stringProp>
+                <stringProp name="File.mimetype">application/pdf</stringProp>
+              </elementProp>
+              <elementProp name="${working_dir}/file/supported_file/PDF file/000.pdf" elementType="HTTPFileArg">
+                <stringProp name="File.path">${working_dir}/file/supported_file/PDF file/000.pdf</stringProp>
+                <stringProp name="File.paramname">job_id</stringProp>
+                <stringProp name="File.mimetype">application/pdf</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
+          <stringProp name="HTTPSampler.path"></stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <org.apache.jmeter.assertions.JSONSchemaAssertion guiclass="org.apache.jmeter.assertions.gui.JSONSchemaAssertionGui" testclass="org.apache.jmeter.assertions.JSONSchemaAssertion" testname="JSON GET Schema Assertion " enabled="true">
+            <stringProp name="jsonschema_assertion_filename">${working_dir}/Schema/Upload.txt</stringProp>
+          </org.apache.jmeter.assertions.JSONSchemaAssertion>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Verify response code" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="49586">200</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+            <boolProp name="Assertion.assume_success">true</boolProp>
+            <intProp name="Assertion.test_type">8</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Verify job id" enabled="true">
+            <stringProp name="JSON_PATH">$.job_id</stringProp>
+            <stringProp name="EXPECTED_VALUE"></stringProp>
+            <boolProp name="JSONVALIDATION">true</boolProp>
+            <boolProp name="EXPECT_NULL">true</boolProp>
+            <boolProp name="INVERT">false</boolProp>
+            <boolProp name="ISREGEX">false</boolProp>
+          </JSONPathAssertion>
+          <hashTree/>
+          <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Verify error code" enabled="true">
+            <stringProp name="JSON_PATH">$.error_code</stringProp>
+            <stringProp name="EXPECTED_VALUE">E10003</stringProp>
+            <boolProp name="JSONVALIDATION">true</boolProp>
+            <boolProp name="EXPECT_NULL">false</boolProp>
+            <boolProp name="INVERT">false</boolProp>
+            <boolProp name="ISREGEX">false</boolProp>
+          </JSONPathAssertion>
+          <hashTree/>
+          <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Verify error message" enabled="true">
+            <stringProp name="JSON_PATH">$.error_message</stringProp>
+            <stringProp name="EXPECTED_VALUE">The value type of job_id is invalid.</stringProp>
+            <boolProp name="JSONVALIDATION">true</boolProp>
+            <boolProp name="EXPECT_NULL">false</boolProp>
+            <boolProp name="INVERT">false</boolProp>
+            <boolProp name="ISREGEX">false</boolProp>
+          </JSONPathAssertion>
+          <hashTree/>
+          <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Verify error message jp" enabled="true">
+            <stringProp name="JSON_PATH">$.error_message_jp</stringProp>
+            <stringProp name="EXPECTED_VALUE">job_id の型が無効です</stringProp>
+            <boolProp name="JSONVALIDATION">true</boolProp>
+            <boolProp name="EXPECT_NULL">false</boolProp>
+            <boolProp name="INVERT">false</boolProp>
+            <boolProp name="ISREGEX">false</boolProp>
+          </JSONPathAssertion>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="[input] key is not found - E10004" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="job_id" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">123445</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">job_id</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
+          <stringProp name="HTTPSampler.path"></stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <org.apache.jmeter.assertions.JSONSchemaAssertion guiclass="org.apache.jmeter.assertions.gui.JSONSchemaAssertionGui" testclass="org.apache.jmeter.assertions.JSONSchemaAssertion" testname="JSON GET Schema Assertion " enabled="true">
+            <stringProp name="jsonschema_assertion_filename">${working_dir}/Schema/Upload.txt</stringProp>
+          </org.apache.jmeter.assertions.JSONSchemaAssertion>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Verify response code" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="49586">200</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+            <boolProp name="Assertion.assume_success">true</boolProp>
+            <intProp name="Assertion.test_type">8</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Verify error code" enabled="true">
+            <stringProp name="JSON_PATH">$.error_code</stringProp>
+            <stringProp name="EXPECTED_VALUE">E10004</stringProp>
+            <boolProp name="JSONVALIDATION">true</boolProp>
+            <boolProp name="EXPECT_NULL">false</boolProp>
+            <boolProp name="INVERT">false</boolProp>
+            <boolProp name="ISREGEX">false</boolProp>
+          </JSONPathAssertion>
+          <hashTree/>
+          <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Verify error message" enabled="true">
+            <stringProp name="JSON_PATH">$.error_message</stringProp>
+            <stringProp name="EXPECTED_VALUE">Request has no file. File is required.</stringProp>
+            <boolProp name="JSONVALIDATION">true</boolProp>
+            <boolProp name="EXPECT_NULL">false</boolProp>
+            <boolProp name="INVERT">false</boolProp>
+            <boolProp name="ISREGEX">false</boolProp>
+          </JSONPathAssertion>
+          <hashTree/>
+          <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Verify error message jp" enabled="true">
+            <stringProp name="JSON_PATH">$.error_message_jp</stringProp>
+            <stringProp name="EXPECTED_VALUE">リクエストにファイルが含まれていません</stringProp>
+            <boolProp name="JSONVALIDATION">true</boolProp>
+            <boolProp name="EXPECT_NULL">false</boolProp>
+            <boolProp name="INVERT">false</boolProp>
+            <boolProp name="ISREGEX">false</boolProp>
+          </JSONPathAssertion>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="[input] not have value - E10005" enabled="false">
+          <elementProp name="HTTPsampler.Files" elementType="HTTPFileArgs">
+            <collectionProp name="HTTPFileArgs.files">
+              <elementProp name="" elementType="HTTPFileArg">
+                <stringProp name="File.path"></stringProp>
+                <stringProp name="File.paramname">input</stringProp>
+                <stringProp name="File.mimetype">application/pdf</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="job_id" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">123456</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">job_id</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
+          <stringProp name="HTTPSampler.path"></stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">true</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <org.apache.jmeter.assertions.JSONSchemaAssertion guiclass="org.apache.jmeter.assertions.gui.JSONSchemaAssertionGui" testclass="org.apache.jmeter.assertions.JSONSchemaAssertion" testname="JSON GET Schema Assertion " enabled="true">
+            <stringProp name="jsonschema_assertion_filename">${working_dir}/Schema/Upload.txt</stringProp>
+          </org.apache.jmeter.assertions.JSONSchemaAssertion>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Verify response code" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="49586">200</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+            <boolProp name="Assertion.assume_success">true</boolProp>
+            <intProp name="Assertion.test_type">8</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Verify error code" enabled="true">
+            <stringProp name="JSON_PATH">$.error_code</stringProp>
+            <stringProp name="EXPECTED_VALUE">E10005</stringProp>
+            <boolProp name="JSONVALIDATION">true</boolProp>
+            <boolProp name="EXPECT_NULL">false</boolProp>
+            <boolProp name="INVERT">false</boolProp>
+            <boolProp name="ISREGEX">false</boolProp>
+          </JSONPathAssertion>
+          <hashTree/>
+          <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Verify error message" enabled="true">
+            <stringProp name="JSON_PATH">$.error_message</stringProp>
+            <stringProp name="EXPECTED_VALUE">Request has no file. File is required.</stringProp>
+            <boolProp name="JSONVALIDATION">true</boolProp>
+            <boolProp name="EXPECT_NULL">false</boolProp>
+            <boolProp name="INVERT">false</boolProp>
+            <boolProp name="ISREGEX">false</boolProp>
+          </JSONPathAssertion>
+          <hashTree/>
+          <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Verify error message jp" enabled="true">
+            <stringProp name="JSON_PATH">$.error_message_jp</stringProp>
+            <stringProp name="EXPECTED_VALUE">リクエストにファイルが含まれていません</stringProp>
+            <boolProp name="JSONVALIDATION">true</boolProp>
+            <boolProp name="EXPECT_NULL">false</boolProp>
+            <boolProp name="INVERT">false</boolProp>
+            <boolProp name="ISREGEX">false</boolProp>
+          </JSONPathAssertion>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="[input] value is in wrong type - E10006" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="job_id" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">123456</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">job_id</stringProp>
+              </elementProp>
+              <elementProp name="input" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">123</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">input</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
+          <stringProp name="HTTPSampler.path"></stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <org.apache.jmeter.assertions.JSONSchemaAssertion guiclass="org.apache.jmeter.assertions.gui.JSONSchemaAssertionGui" testclass="org.apache.jmeter.assertions.JSONSchemaAssertion" testname="JSON GET Schema Assertion " enabled="true">
+            <stringProp name="jsonschema_assertion_filename">${working_dir}/Schema/Upload.txt</stringProp>
+          </org.apache.jmeter.assertions.JSONSchemaAssertion>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Verify response code" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="49586">200</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+            <boolProp name="Assertion.assume_success">true</boolProp>
+            <intProp name="Assertion.test_type">8</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Verify error code" enabled="true">
+            <stringProp name="JSON_PATH">$.error_code</stringProp>
+            <stringProp name="EXPECTED_VALUE">E10006</stringProp>
+            <boolProp name="JSONVALIDATION">true</boolProp>
+            <boolProp name="EXPECT_NULL">false</boolProp>
+            <boolProp name="INVERT">false</boolProp>
+            <boolProp name="ISREGEX">false</boolProp>
+          </JSONPathAssertion>
+          <hashTree/>
+          <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Verify error message" enabled="true">
+            <stringProp name="JSON_PATH">$.error_message</stringProp>
+            <stringProp name="EXPECTED_VALUE">The value type is invalid.</stringProp>
+            <boolProp name="JSONVALIDATION">true</boolProp>
+            <boolProp name="EXPECT_NULL">false</boolProp>
+            <boolProp name="INVERT">false</boolProp>
+            <boolProp name="ISREGEX">false</boolProp>
+          </JSONPathAssertion>
+          <hashTree/>
+          <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Verify error message jp" enabled="true">
+            <stringProp name="JSON_PATH">$.error_message_jp</stringProp>
+            <stringProp name="EXPECTED_VALUE">値のタイプが無効です</stringProp>
+            <boolProp name="JSONVALIDATION">true</boolProp>
+            <boolProp name="EXPECT_NULL">false</boolProp>
+            <boolProp name="INVERT">false</boolProp>
+            <boolProp name="ISREGEX">false</boolProp>
+          </JSONPathAssertion>
+          <hashTree/>
+        </hashTree>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Delete API " enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+      </ThreadGroup>
+      <hashTree>
+        <kg.apc.jmeter.control.ParameterizedController guiclass="kg.apc.jmeter.control.ParameterizedControllerGui" testclass="kg.apc.jmeter.control.ParameterizedController" testname="[PC] - Upload file" enabled="true">
+          <elementProp name="ParameterizedController" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="input" elementType="Argument">
+                <stringProp name="Argument.name">input</stringProp>
+                <stringProp name="Argument.value">0.pdf</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="type" elementType="Argument">
+                <stringProp name="Argument.name">type</stringProp>
+                <stringProp name="Argument.value">application/pdf</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+        </kg.apc.jmeter.control.ParameterizedController>
+        <hashTree>
+          <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="[MC] - Upload file" enabled="true">
+            <collectionProp name="ModuleController.node_path">
+              <stringProp name="764597751">Test Plan</stringProp>
+              <stringProp name="764597751">Test Plan</stringProp>
+              <stringProp name="1612250523">Reuse Modules</stringProp>
+              <stringProp name="1932337882">[SC] - Upload file</stringProp>
+            </collectionProp>
+          </ModuleController>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Delete job - delete successfully" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
+          <stringProp name="HTTPSampler.path">${delete_api_path}?job_id=${jobid}</stringProp>
+          <stringProp name="HTTPSampler.method">DELETE</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout">60000</stringProp>
+          <stringProp name="HTTPSampler.response_timeout">300000</stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <org.apache.jmeter.assertions.JSONSchemaAssertion guiclass="org.apache.jmeter.assertions.gui.JSONSchemaAssertionGui" testclass="org.apache.jmeter.assertions.JSONSchemaAssertion" testname="JSON Schema Assertion " enabled="true">
+            <stringProp name="jsonschema_assertion_filename">${working_dir}/Schema/Upload.txt</stringProp>
+          </org.apache.jmeter.assertions.JSONSchemaAssertion>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Verify response code" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="49586">200</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+            <boolProp name="Assertion.assume_success">true</boolProp>
+            <intProp name="Assertion.test_type">8</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Verify job id" enabled="true">
+            <stringProp name="JSON_PATH">$.job_id</stringProp>
+            <stringProp name="EXPECTED_VALUE">${jobid}</stringProp>
+            <boolProp name="JSONVALIDATION">true</boolProp>
+            <boolProp name="EXPECT_NULL">false</boolProp>
+            <boolProp name="INVERT">false</boolProp>
+            <boolProp name="ISREGEX">false</boolProp>
+          </JSONPathAssertion>
+          <hashTree/>
+          <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Verify error code" enabled="true">
+            <stringProp name="JSON_PATH">$.error_code</stringProp>
+            <stringProp name="EXPECTED_VALUE"></stringProp>
+            <boolProp name="JSONVALIDATION">true</boolProp>
+            <boolProp name="EXPECT_NULL">true</boolProp>
+            <boolProp name="INVERT">false</boolProp>
+            <boolProp name="ISREGEX">false</boolProp>
+          </JSONPathAssertion>
+          <hashTree/>
+          <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Verify error message" enabled="true">
+            <stringProp name="JSON_PATH">$.error_message</stringProp>
+            <stringProp name="EXPECTED_VALUE"></stringProp>
+            <boolProp name="JSONVALIDATION">true</boolProp>
+            <boolProp name="EXPECT_NULL">true</boolProp>
+            <boolProp name="INVERT">false</boolProp>
+            <boolProp name="ISREGEX">false</boolProp>
+          </JSONPathAssertion>
+          <hashTree/>
+          <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Verify error message jp" enabled="true">
+            <stringProp name="JSON_PATH">$.error_message_jp</stringProp>
+            <stringProp name="EXPECTED_VALUE"></stringProp>
+            <boolProp name="JSONVALIDATION">true</boolProp>
+            <boolProp name="EXPECT_NULL">true</boolProp>
+            <boolProp name="INVERT">false</boolProp>
+            <boolProp name="ISREGEX">false</boolProp>
+          </JSONPathAssertion>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Delete job - E10001 -  job_id not exists" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
+          <stringProp name="HTTPSampler.path">${delete_api_path}?job_id=${jobid}</stringProp>
+          <stringProp name="HTTPSampler.method">DELETE</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout">60000</stringProp>
+          <stringProp name="HTTPSampler.response_timeout">300000</stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <org.apache.jmeter.assertions.JSONSchemaAssertion guiclass="org.apache.jmeter.assertions.gui.JSONSchemaAssertionGui" testclass="org.apache.jmeter.assertions.JSONSchemaAssertion" testname="JSON Schema Assertion " enabled="true">
+            <stringProp name="jsonschema_assertion_filename">${working_dir}/Schema/Upload.txt</stringProp>
+          </org.apache.jmeter.assertions.JSONSchemaAssertion>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Verify response code" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="49586">200</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+            <boolProp name="Assertion.assume_success">true</boolProp>
+            <intProp name="Assertion.test_type">8</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Verify job id" enabled="true">
+            <stringProp name="JSON_PATH">$.job_id</stringProp>
+            <stringProp name="EXPECTED_VALUE">${jobid}</stringProp>
+            <boolProp name="JSONVALIDATION">true</boolProp>
+            <boolProp name="EXPECT_NULL">false</boolProp>
+            <boolProp name="INVERT">false</boolProp>
+            <boolProp name="ISREGEX">false</boolProp>
+          </JSONPathAssertion>
+          <hashTree/>
+          <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Verify error code" enabled="true">
+            <stringProp name="JSON_PATH">$.error_code</stringProp>
+            <stringProp name="EXPECTED_VALUE">E10001</stringProp>
+            <boolProp name="JSONVALIDATION">true</boolProp>
+            <boolProp name="EXPECT_NULL">false</boolProp>
+            <boolProp name="INVERT">false</boolProp>
+            <boolProp name="ISREGEX">false</boolProp>
+          </JSONPathAssertion>
+          <hashTree/>
+          <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Verify error message" enabled="true">
+            <stringProp name="JSON_PATH">$.error_message</stringProp>
+            <stringProp name="EXPECTED_VALUE">job_id is required.</stringProp>
+            <boolProp name="JSONVALIDATION">true</boolProp>
+            <boolProp name="EXPECT_NULL">false</boolProp>
+            <boolProp name="INVERT">false</boolProp>
+            <boolProp name="ISREGEX">false</boolProp>
+          </JSONPathAssertion>
+          <hashTree/>
+          <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Verify error message jp" enabled="true">
+            <stringProp name="JSON_PATH">$.error_message_jp</stringProp>
+            <stringProp name="EXPECTED_VALUE">リクエストされたjob_idがありません</stringProp>
+            <boolProp name="JSONVALIDATION">true</boolProp>
+            <boolProp name="EXPECT_NULL">false</boolProp>
+            <boolProp name="INVERT">false</boolProp>
+            <boolProp name="ISREGEX">false</boolProp>
+          </JSONPathAssertion>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Delete job - 422 -  [job_id] param is not found" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
+          <stringProp name="HTTPSampler.path">${delete_api_path}</stringProp>
+          <stringProp name="HTTPSampler.method">DELETE</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout">60000</stringProp>
+          <stringProp name="HTTPSampler.response_timeout">300000</stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <org.apache.jmeter.assertions.JSONSchemaAssertion guiclass="org.apache.jmeter.assertions.gui.JSONSchemaAssertionGui" testclass="org.apache.jmeter.assertions.JSONSchemaAssertion" testname="JSON Schema Assertion " enabled="true">
+            <stringProp name="jsonschema_assertion_filename">${working_dir}/Schema/Delete_BadRequest.txt</stringProp>
+          </org.apache.jmeter.assertions.JSONSchemaAssertion>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Verify response code" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="51572">422</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+            <boolProp name="Assertion.assume_success">true</boolProp>
+            <intProp name="Assertion.test_type">8</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Verify error msg" enabled="true">
+            <stringProp name="JSON_PATH">$.detail[0].msg</stringProp>
+            <stringProp name="EXPECTED_VALUE">field required</stringProp>
+            <boolProp name="JSONVALIDATION">true</boolProp>
+            <boolProp name="EXPECT_NULL">false</boolProp>
+            <boolProp name="INVERT">false</boolProp>
+            <boolProp name="ISREGEX">false</boolProp>
+          </JSONPathAssertion>
+          <hashTree/>
+          <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Verify error type" enabled="true">
+            <stringProp name="JSON_PATH">$.detail[0].type</stringProp>
+            <stringProp name="EXPECTED_VALUE">value_error.missing</stringProp>
+            <boolProp name="JSONVALIDATION">true</boolProp>
+            <boolProp name="EXPECT_NULL">false</boolProp>
+            <boolProp name="INVERT">false</boolProp>
+            <boolProp name="ISREGEX">false</boolProp>
+          </JSONPathAssertion>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Delete job - E10001 -  [job_id] value is not inputted - temp" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">${delete_api_path}?job_id=</stringProp>
+          <stringProp name="HTTPSampler.method">DELETE</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          <stringProp name="TestPlan.comments">Created from cURL on 2022-11-28T17:06:48.8233812</stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP HeaderManager" enabled="false">
+            <collectionProp name="HeaderManager.headers"/>
+            <stringProp name="TestPlan.comments">Created from cURL on 2022-11-28T17:06:48.8233812</stringProp>
+          </HeaderManager>
+          <hashTree/>
+          <org.apache.jmeter.assertions.JSONSchemaAssertion guiclass="org.apache.jmeter.assertions.gui.JSONSchemaAssertionGui" testclass="org.apache.jmeter.assertions.JSONSchemaAssertion" testname="JSON Schema Assertion " enabled="false">
+            <stringProp name="jsonschema_assertion_filename">${working_dir}/Schema/Upload.txt</stringProp>
+          </org.apache.jmeter.assertions.JSONSchemaAssertion>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Verify response code" enabled="false">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="49586">200</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+            <boolProp name="Assertion.assume_success">true</boolProp>
+            <intProp name="Assertion.test_type">8</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Verify job id" enabled="false">
+            <stringProp name="JSON_PATH">$.job_id</stringProp>
+            <stringProp name="EXPECTED_VALUE"></stringProp>
+            <boolProp name="JSONVALIDATION">true</boolProp>
+            <boolProp name="EXPECT_NULL">true</boolProp>
+            <boolProp name="INVERT">false</boolProp>
+            <boolProp name="ISREGEX">false</boolProp>
+          </JSONPathAssertion>
+          <hashTree/>
+          <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Verify error code" enabled="false">
+            <stringProp name="JSON_PATH">$.error_code</stringProp>
+            <stringProp name="EXPECTED_VALUE">E10001</stringProp>
+            <boolProp name="JSONVALIDATION">true</boolProp>
+            <boolProp name="EXPECT_NULL">false</boolProp>
+            <boolProp name="INVERT">false</boolProp>
+            <boolProp name="ISREGEX">false</boolProp>
+          </JSONPathAssertion>
+          <hashTree/>
+          <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Verify error message" enabled="false">
+            <stringProp name="JSON_PATH">$.error_message</stringProp>
+            <stringProp name="EXPECTED_VALUE">job_id is required.</stringProp>
+            <boolProp name="JSONVALIDATION">true</boolProp>
+            <boolProp name="EXPECT_NULL">false</boolProp>
+            <boolProp name="INVERT">false</boolProp>
+            <boolProp name="ISREGEX">false</boolProp>
+          </JSONPathAssertion>
+          <hashTree/>
+          <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Verify error message jp" enabled="false">
+            <stringProp name="JSON_PATH">$.error_message_jp</stringProp>
+            <stringProp name="EXPECTED_VALUE">リクエストされたjob_idがありません</stringProp>
+            <boolProp name="JSONVALIDATION">true</boolProp>
+            <boolProp name="EXPECT_NULL">false</boolProp>
+            <boolProp name="INVERT">false</boolProp>
+            <boolProp name="ISREGEX">false</boolProp>
+          </JSONPathAssertion>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Delete job - E10001 -  [job_id] value is not inputted" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">${delete_api_path}?job_id=</stringProp>
+          <stringProp name="HTTPSampler.method">DELETE</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          <stringProp name="TestPlan.comments">Created from cURL on 2022-11-28T17:06:48.8233812</stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP HeaderManager" enabled="false">
+            <collectionProp name="HeaderManager.headers"/>
+            <stringProp name="TestPlan.comments">Created from cURL on 2022-11-28T17:06:48.8233812</stringProp>
+          </HeaderManager>
+          <hashTree/>
+          <org.apache.jmeter.assertions.JSONSchemaAssertion guiclass="org.apache.jmeter.assertions.gui.JSONSchemaAssertionGui" testclass="org.apache.jmeter.assertions.JSONSchemaAssertion" testname="JSON Schema Assertion " enabled="true">
+            <stringProp name="jsonschema_assertion_filename">${working_dir}/Schema/Upload.txt</stringProp>
+          </org.apache.jmeter.assertions.JSONSchemaAssertion>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Verify response code" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="49586">200</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+            <boolProp name="Assertion.assume_success">true</boolProp>
+            <intProp name="Assertion.test_type">8</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Verify job id" enabled="true">
+            <stringProp name="JSON_PATH">$.job_id</stringProp>
+            <stringProp name="EXPECTED_VALUE"></stringProp>
+            <boolProp name="JSONVALIDATION">true</boolProp>
+            <boolProp name="EXPECT_NULL">true</boolProp>
+            <boolProp name="INVERT">false</boolProp>
+            <boolProp name="ISREGEX">false</boolProp>
+          </JSONPathAssertion>
+          <hashTree/>
+          <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Verify error code" enabled="true">
+            <stringProp name="JSON_PATH">$.error_code</stringProp>
+            <stringProp name="EXPECTED_VALUE">E10001</stringProp>
+            <boolProp name="JSONVALIDATION">true</boolProp>
+            <boolProp name="EXPECT_NULL">false</boolProp>
+            <boolProp name="INVERT">false</boolProp>
+            <boolProp name="ISREGEX">false</boolProp>
+          </JSONPathAssertion>
+          <hashTree/>
+          <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Verify error message" enabled="true">
+            <stringProp name="JSON_PATH">$.error_message</stringProp>
+            <stringProp name="EXPECTED_VALUE">job_id is required.</stringProp>
+            <boolProp name="JSONVALIDATION">true</boolProp>
+            <boolProp name="EXPECT_NULL">false</boolProp>
+            <boolProp name="INVERT">false</boolProp>
+            <boolProp name="ISREGEX">false</boolProp>
+          </JSONPathAssertion>
+          <hashTree/>
+          <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Verify error message jp" enabled="true">
+            <stringProp name="JSON_PATH">$.error_message_jp</stringProp>
+            <stringProp name="EXPECTED_VALUE">リクエストされたjob_idがありません</stringProp>
+            <boolProp name="JSONVALIDATION">true</boolProp>
+            <boolProp name="EXPECT_NULL">false</boolProp>
+            <boolProp name="INVERT">false</boolProp>
+            <boolProp name="ISREGEX">false</boolProp>
+          </JSONPathAssertion>
+          <hashTree/>
+        </hashTree>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Download API" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+      </ThreadGroup>
+      <hashTree>
+        <WhileController guiclass="WhileControllerGui" testclass="WhileController" testname="Download successfully" enabled="true">
+          <stringProp name="WhileController.condition">${__jexl3(&quot;${input}&quot; != &quot;&lt;EOF&gt;&quot;,)}</stringProp>
+        </WhileController>
+        <hashTree>
+          <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config" enabled="true">
+            <stringProp name="filename">${working_dir}${download_file}</stringProp>
+            <stringProp name="fileEncoding">UTF-8</stringProp>
+            <stringProp name="variableNames"></stringProp>
+            <boolProp name="ignoreFirstLine">true</boolProp>
+            <stringProp name="delimiter">,</stringProp>
+            <boolProp name="quotedData">true</boolProp>
+            <boolProp name="recycle">false</boolProp>
+            <boolProp name="stopThread">false</boolProp>
+            <stringProp name="shareMode">shareMode.thread</stringProp>
+          </CSVDataSet>
+          <hashTree/>
+          <IfController guiclass="IfControllerPanel" testclass="IfController" testname="If Controller" enabled="true">
+            <stringProp name="IfController.condition">${__jexl3(&quot;${input}&quot; != &quot;&lt;EOF&gt;&quot;,)}</stringProp>
+            <boolProp name="IfController.evaluateAll">false</boolProp>
+          </IfController>
+          <hashTree>
+            <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="[MC] - Upload file" enabled="true">
+              <collectionProp name="ModuleController.node_path">
+                <stringProp name="764597751">Test Plan</stringProp>
+                <stringProp name="764597751">Test Plan</stringProp>
+                <stringProp name="1612250523">Reuse Modules</stringProp>
+                <stringProp name="1932337882">[SC] - Upload file</stringProp>
+              </collectionProp>
+            </ModuleController>
+            <hashTree/>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Download job successfully - ${input}" enabled="true">
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+                <collectionProp name="Arguments.arguments"/>
+              </elementProp>
+              <stringProp name="HTTPSampler.domain"></stringProp>
+              <stringProp name="HTTPSampler.port"></stringProp>
+              <stringProp name="HTTPSampler.protocol"></stringProp>
+              <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
+              <stringProp name="HTTPSampler.path">${download_api_path}?job_id=${jobid}</stringProp>
+              <stringProp name="HTTPSampler.method">GET</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">false</boolProp>
+              <boolProp name="HTTPSampler.auto_redirects">true</boolProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+              <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+              <stringProp name="HTTPSampler.connect_timeout">60000</stringProp>
+              <stringProp name="HTTPSampler.response_timeout">300000</stringProp>
+            </HTTPSamplerProxy>
+            <hashTree>
+              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Verify response code" enabled="true">
+                <collectionProp name="Asserion.test_strings">
+                  <stringProp name="49586">200</stringProp>
+                </collectionProp>
+                <stringProp name="Assertion.custom_message"></stringProp>
+                <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+                <boolProp name="Assertion.assume_success">true</boolProp>
+                <intProp name="Assertion.test_type">8</intProp>
+              </ResponseAssertion>
+              <hashTree/>
+              <MD5HexAssertion guiclass="MD5HexAssertionGUI" testclass="MD5HexAssertion" testname="MD5Hex Assertion" enabled="true">
+                <stringProp name="MD5HexAssertion.size">${md5hex}</stringProp>
+              </MD5HexAssertion>
+              <hashTree/>
+            </hashTree>
+          </hashTree>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Download job - E10001 - job_id not exists" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
+          <stringProp name="HTTPSampler.path">${download_api_path}?job_id=notexisting</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout">60000</stringProp>
+          <stringProp name="HTTPSampler.response_timeout">300000</stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <org.apache.jmeter.assertions.JSONSchemaAssertion guiclass="org.apache.jmeter.assertions.gui.JSONSchemaAssertionGui" testclass="org.apache.jmeter.assertions.JSONSchemaAssertion" testname="JSON Schema Assertion " enabled="true">
+            <stringProp name="jsonschema_assertion_filename">${working_dir}/Schema/Upload.txt</stringProp>
+          </org.apache.jmeter.assertions.JSONSchemaAssertion>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Verify response code" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="49586">200</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+            <boolProp name="Assertion.assume_success">true</boolProp>
+            <intProp name="Assertion.test_type">8</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Verify error code" enabled="true">
+            <stringProp name="JSON_PATH">$.error_code</stringProp>
+            <stringProp name="EXPECTED_VALUE">E10001</stringProp>
+            <boolProp name="JSONVALIDATION">true</boolProp>
+            <boolProp name="EXPECT_NULL">false</boolProp>
+            <boolProp name="INVERT">false</boolProp>
+            <boolProp name="ISREGEX">false</boolProp>
+          </JSONPathAssertion>
+          <hashTree/>
+          <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Verify error message" enabled="true">
+            <stringProp name="JSON_PATH">$.error_message</stringProp>
+            <stringProp name="EXPECTED_VALUE">job_id is required.</stringProp>
+            <boolProp name="JSONVALIDATION">true</boolProp>
+            <boolProp name="EXPECT_NULL">false</boolProp>
+            <boolProp name="INVERT">false</boolProp>
+            <boolProp name="ISREGEX">false</boolProp>
+          </JSONPathAssertion>
+          <hashTree/>
+          <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Verify error message jp" enabled="true">
+            <stringProp name="JSON_PATH">$.error_message_jp</stringProp>
+            <stringProp name="EXPECTED_VALUE">リクエストされたjob_idがありません</stringProp>
+            <boolProp name="JSONVALIDATION">true</boolProp>
+            <boolProp name="EXPECT_NULL">false</boolProp>
+            <boolProp name="INVERT">false</boolProp>
+            <boolProp name="ISREGEX">false</boolProp>
+          </JSONPathAssertion>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Download job - E10001 -  [job_id] value is not assigned" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="job_id" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value"></stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">job_id</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
+          <stringProp name="HTTPSampler.path">${download_api_path}</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout">60000</stringProp>
+          <stringProp name="HTTPSampler.response_timeout">300000</stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <org.apache.jmeter.assertions.JSONSchemaAssertion guiclass="org.apache.jmeter.assertions.gui.JSONSchemaAssertionGui" testclass="org.apache.jmeter.assertions.JSONSchemaAssertion" testname="JSON Schema Assertion " enabled="true">
+            <stringProp name="jsonschema_assertion_filename">${working_dir}/Schema/Upload.txt</stringProp>
+          </org.apache.jmeter.assertions.JSONSchemaAssertion>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Verify response code" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="49586">200</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+            <boolProp name="Assertion.assume_success">true</boolProp>
+            <intProp name="Assertion.test_type">8</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Verify job id" enabled="true">
+            <stringProp name="JSON_PATH">$.job_id</stringProp>
+            <stringProp name="EXPECTED_VALUE"></stringProp>
+            <boolProp name="JSONVALIDATION">true</boolProp>
+            <boolProp name="EXPECT_NULL">true</boolProp>
+            <boolProp name="INVERT">false</boolProp>
+            <boolProp name="ISREGEX">false</boolProp>
+          </JSONPathAssertion>
+          <hashTree/>
+          <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Verify error code" enabled="true">
+            <stringProp name="JSON_PATH">$.error_code</stringProp>
+            <stringProp name="EXPECTED_VALUE">E10001</stringProp>
+            <boolProp name="JSONVALIDATION">true</boolProp>
+            <boolProp name="EXPECT_NULL">false</boolProp>
+            <boolProp name="INVERT">false</boolProp>
+            <boolProp name="ISREGEX">false</boolProp>
+          </JSONPathAssertion>
+          <hashTree/>
+          <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Verify error message" enabled="true">
+            <stringProp name="JSON_PATH">$.error_message</stringProp>
+            <stringProp name="EXPECTED_VALUE">job_id is required.</stringProp>
+            <boolProp name="JSONVALIDATION">true</boolProp>
+            <boolProp name="EXPECT_NULL">false</boolProp>
+            <boolProp name="INVERT">false</boolProp>
+            <boolProp name="ISREGEX">false</boolProp>
+          </JSONPathAssertion>
+          <hashTree/>
+          <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Verify error message jp" enabled="true">
+            <stringProp name="JSON_PATH">$.error_message_jp</stringProp>
+            <stringProp name="EXPECTED_VALUE">リクエストされたjob_idがありません</stringProp>
+            <boolProp name="JSONVALIDATION">true</boolProp>
+            <boolProp name="EXPECT_NULL">false</boolProp>
+            <boolProp name="INVERT">false</boolProp>
+            <boolProp name="ISREGEX">false</boolProp>
+          </JSONPathAssertion>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Download job - 422 -  [job_id] param is not found" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
+          <stringProp name="HTTPSampler.path">${download_api_path}</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout">60000</stringProp>
+          <stringProp name="HTTPSampler.response_timeout">300000</stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <org.apache.jmeter.assertions.JSONSchemaAssertion guiclass="org.apache.jmeter.assertions.gui.JSONSchemaAssertionGui" testclass="org.apache.jmeter.assertions.JSONSchemaAssertion" testname="JSON Schema Assertion " enabled="true">
+            <stringProp name="jsonschema_assertion_filename">${working_dir}/Schema/Delete_BadRequest.txt</stringProp>
+          </org.apache.jmeter.assertions.JSONSchemaAssertion>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Verify response code" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="51572">422</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+            <boolProp name="Assertion.assume_success">true</boolProp>
+            <intProp name="Assertion.test_type">8</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Verify error msg" enabled="true">
+            <stringProp name="JSON_PATH">$.detail[0].msg</stringProp>
+            <stringProp name="EXPECTED_VALUE">field required</stringProp>
+            <boolProp name="JSONVALIDATION">true</boolProp>
+            <boolProp name="EXPECT_NULL">false</boolProp>
+            <boolProp name="INVERT">false</boolProp>
+            <boolProp name="ISREGEX">false</boolProp>
+          </JSONPathAssertion>
+          <hashTree/>
+          <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="Verify error type" enabled="true">
+            <stringProp name="JSON_PATH">$.detail[0].type</stringProp>
+            <stringProp name="EXPECTED_VALUE">value_error.missing</stringProp>
+            <boolProp name="JSONVALIDATION">true</boolProp>
+            <boolProp name="EXPECT_NULL">false</boolProp>
+            <boolProp name="INVERT">false</boolProp>
+            <boolProp name="ISREGEX">false</boolProp>
+          </JSONPathAssertion>
+          <hashTree/>
+        </hashTree>
+      </hashTree>
+      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <sentBytes>true</sentBytes>
+            <url>true</url>
+            <threadCounts>true</threadCounts>
+            <idleTime>true</idleTime>
+            <connectTime>true</connectTime>
+          </value>
+        </objProp>
+        <stringProp name="filename"></stringProp>
+      </ResultCollector>
+      <hashTree/>
+      <ResultCollector guiclass="TableVisualizer" testclass="ResultCollector" testname="View Results in Table" enabled="true">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <sentBytes>true</sentBytes>
+            <url>true</url>
+            <threadCounts>true</threadCounts>
+            <idleTime>true</idleTime>
+            <connectTime>true</connectTime>
+          </value>
+        </objProp>
+        <stringProp name="filename"></stringProp>
+      </ResultCollector>
+      <hashTree/>
+      <ResultCollector guiclass="SummaryReport" testclass="ResultCollector" testname="Summary Report" enabled="true">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>true</responseData>
+            <samplerData>false</samplerData>
+            <xml>true</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>true</responseDataOnError>
+            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <sentBytes>true</sentBytes>
+            <url>true</url>
+            <threadCounts>true</threadCounts>
+            <idleTime>true</idleTime>
+            <connectTime>true</connectTime>
+          </value>
+        </objProp>
+        <stringProp name="filename"></stringProp>
+      </ResultCollector>
+      <hashTree/>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>

@@ -1,0 +1,49 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "job_id": {
+      "type": "string"
+    },
+    "metadata": {
+      "type": "object",
+      "properties": {
+        "version": {
+          "type": "string"
+        },
+        "product_line": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "version",
+        "product_line"
+      ]
+    },
+    "all_have_metadata": {
+      "type": "string"
+    },
+    "error_code": {
+      "type": "string"
+    },
+    "error_message": {
+      "type": "string"
+    },
+    "error_message_jp": {
+      "type": "string"
+    },
+    "result": {
+      "type": "array",
+      "items": {}
+    }
+  },
+  "required": [
+    "job_id",
+    "metadata",
+    "all_have_metadata",
+    "error_code",
+    "error_message",
+    "error_message_jp",
+    "result"
+  ]
+}

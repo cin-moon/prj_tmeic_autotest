@@ -1,0 +1,3 @@
+﻿job_id,input,type
+123456,pdf_broken.pdf,application/pdf
+123457,rename_extension.pdf,application/pdf
